@@ -1,0 +1,54 @@
+import React from 'react';
+import Svg, { Path, G, Defs, ClipPath, Rect } from 'react-native-svg';
+import { useSelector } from 'react-redux';
+
+/** earning active icon */
+const IconAddCourse = ({ width = 20, height = 20 }) => {
+  const appColor = useSelector((state) => state.global.appColor);
+
+  return (
+    <Svg
+      width={width}
+      height={height}
+      viewBox="0 0 40 41"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Rect y="0.390625" width="40" height="40" rx="20" fill={appColor?.base_color} />
+      <Path
+        d="M27.5 16.2243V24.5576C27.5 27.0576 26.25 28.7243 23.3333 28.7243H16.6667C13.75 28.7243 12.5 27.0576 12.5 24.5576V16.2243C12.5 13.7243 13.75 12.0576 16.6667 12.0576H23.3333C26.25 12.0576 27.5 13.7243 27.5 16.2243Z"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M22.0833 14.1406V15.8073C22.0833 16.724 22.8333 17.474 23.75 17.474H25.4167"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M16.6667 21.2236H20"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M16.6667 24.5576H23.3333"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export default IconAddCourse;

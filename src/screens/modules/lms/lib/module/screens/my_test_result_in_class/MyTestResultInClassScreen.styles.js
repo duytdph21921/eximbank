@@ -1,0 +1,31 @@
+"use strict";
+
+import { StyleSheet } from 'react-native';
+import { horizontal, vertical } from '@utils/scales';
+import { Color } from '@theme/colors';
+import { screenWidth } from '@utils/platforms';
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Color.white
+  },
+  viewScrollView: {
+    paddingBottom: vertical(90 + 15)
+  },
+  viewHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    width: screenWidth - horizontal(125),
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: horizontal(15)
+  },
+  btnSubmitHeader: {},
+  textSubmitHeader: {
+    fontSize: 14,
+    fontWeight: '400',
+    lineHeight: 23.8,
+    color: Color.base_color
+  }
+});
+//# sourceMappingURL=MyTestResultInClassScreen.styles.js.map

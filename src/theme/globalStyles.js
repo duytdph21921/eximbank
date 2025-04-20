@@ -1,0 +1,202 @@
+import { Platform, StyleSheet } from 'react-native';
+import { Color } from '@theme/colors';
+import { isTablet, screenHeight, screenWidth } from '@utils/platforms';
+import { horizontal, textSize, vertical } from '@utils/scales';
+import fonts from '@assets/value/fonts';
+
+// eslint-disable-next-line no-undef
+export default globalStyles = StyleSheet.create({
+  button: {
+    marginTop: 20,
+    alignSelf: 'stretch',
+    height: 50,
+    marginStart: !isTablet ? horizontal(10) : 0,
+    backgroundColor: Color.bg_button_common,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 8,
+  },
+
+  textInput: {
+    height: vertical(50),
+    borderWidth: 1,
+    alignSelf: 'stretch',
+    fontSize: textSize(15),
+    borderRadius: 8,
+    borderColor: Color.cl_border_text_input,
+    backgroundColor: Color.white,
+    paddingStart: 10,
+    color: Color.black,
+  },
+  textButton: {
+    color: Color.white,
+    fontWeight: 'bold',
+  },
+  input: {
+    width: screenWidth - horizontal(15) * 2 - 2,
+    height: 54,
+    borderWidth: 1,
+    borderRadius: 5,
+    backgroundColor: Color.white,
+    padding: 15,
+    color: Color.color_unactive,
+    fontSize: textSize(14),
+    lineHeight: 16,
+    borderColor: Color.cl_border_text_input,
+  },
+  roundButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: Color.base_color,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    ...Platform.select({
+      ios: {
+        shadowColor: Color.base_color,
+        shadowOpacity: 0.5,
+        elevation: 1,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 10 },
+        backgroundColor: Color.transparents,
+      },
+      android: {
+        elevation: 1,
+        backgroundColor: Color.transparents,
+      },
+    }),
+  },
+  textConfirm: {
+    height: 50,
+    alignSelf: 'stretch',
+    marginVertical: 5,
+    marginStart: horizontal(10),
+    fontSize: textSize(15),
+    borderRadius: 8,
+    backgroundColor: Color.white,
+    paddingStart: 10,
+    color: Color.black,
+    paddingEnd: 10,
+  },
+  text_err: {
+    alignSelf: 'center',
+    marginTop: 15,
+    color: Color.cl_text_requied,
+    fontWeight: 'bold',
+  },
+  mess_err: {
+    color: Color.cl_text_requied,
+    fontWeight: 'bold',
+    fontSize: textSize(12),
+    marginStart: horizontal(10),
+  },
+  hiddenIcon: {
+    position: 'absolute',
+    right: 18,
+    alignSelf: 'center',
+  },
+  containIconTab: {
+    position: 'absolute',
+    top: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    height: isTablet ? 72 : '85%',
+    width: isTablet ? 100 : '100%',
+  },
+  emptyTabbar: {
+    width: 24,
+    height: 4,
+  },
+  cmTwoButtonLeft: {
+    width: '100%',
+    backgroundColor: Color.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 13.5,
+    borderWidth: 1,
+    borderColor: Color.text_color,
+    height: 55,
+  },
+  textButtonLeft: {
+    color: Color.text_color,
+    fontSize: textSize(14),
+    fontWeight: 'bold',
+  },
+  cmTwoButtonRight: {
+    width: '100%',
+    backgroundColor: Color.bg_cm_button,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 13.5,
+    borderWidth: 1,
+    borderColor: Color.bg_cm_button,
+    height: 55,
+  },
+  textButtonRight: {
+    color: Color.white,
+    fontSize: textSize(14),
+    fontWeight: 'bold',
+  },
+  titleScreen: {
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    fontWeight: '700',
+    fontSize: textSize(16),
+    paddingHorizontal: horizontal(5),
+    color: Color.text_color,
+    marginVertical: vertical(10),
+    fontFamily: fonts.bold,
+    maxWidth: screenWidth - horizontal(20 * 2) - 40 * 2,
+  },
+  textDetail: {
+    fontSize: textSize(14),
+    fontWeight: '400',
+    width: screenWidth - 2 * horizontal(15) - 40 - horizontal(50),
+    color: Color.text_color_hover,
+  },
+  textNomal: {
+    fontSize: textSize(14),
+    fontWeight: '400',
+    color: Color.text_color_hover,
+  },
+  questionContent: {
+    fontSize: textSize(16),
+    fontFamily: fonts.bold,
+    fontWeight: '700',
+    color: Color.text_color,
+  },
+  classDescription: {
+    fontSize: textSize(14),
+    fontFamily: fonts.bold,
+    fontWeight: '700',
+    color: Color.text_color,
+  },
+  textRequired: {
+    color: Color.color_not_pass,
+  },
+  webView: {
+    flex: 1,
+    backgroundColor: Color.black,
+    ...StyleSheet.absoluteFill,
+  },
+  pContainer: {
+    margin: 0,
+  },
+  pText: {
+    color: Color.text_color,
+    fontSize: textSize(17),
+    fontWeight: '700',
+    fontFamily: fonts.medium,
+    margin: 0,
+  },
+  pImg: {
+    width: screenWidth,
+    height: screenHeight * 0.35,
+    marginVertical: 5,
+  },
+  flexRowDirector: {
+    flexDirection: 'row',
+  },
+});
